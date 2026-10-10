@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Render outputs and stills (regenerate with npm run render:*)
+out/
+dist/
+
+# Secrets / local config
+.env
+.env.*
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local TTS environment (Kokoro); recreate per README
+.venv-tts/
+
+# Raw footage and final narration: large binaries, supplied by the app/Vansh.
+# Keep provenance in asset-manifest.json and evidence/; share media separately.
+public/footage/*.mp4
+public/footage/*.mov
+public/footage/*.webm
+public/audio/narration*.wav
+public/audio/bed.wav

@@ -1,0 +1,78 @@
+{
+ "status": "draft_script",
+ "voice": {
+  "engine": "kokoro-82m",
+  "voice": "af_heart",
+  "speed": 1.0,
+  "alternatives": [
+   "polly-kajal-neural (en-IN/hi-IN bilingual)",
+   "vansh-recorded"
+  ]
+ },
+ "note": "Story: problem -> how Pyau fixes it -> how it runs on AWS. {tokens} come from asset-manifest facts. '||' inserts a beat (1 s, or pauseSeconds per scene). In S03 the single beat is the app-audio window: the real Polly Hindi answer from the capture plays there and narration is silent. 'pronunciations' rewrite words for TTS input only; captions keep the display spelling. 'kokoroPhonemes' override pronunciations for Kokoro (misaki inline phonemes); Polly uses SSML from 'pronunciations'.",
+ "pronunciations": {
+  "Pyau": "Pyaa-oo",
+  "Paani": "Paa-nee",
+  "chhaon": "chhaa-on",
+  "aaraam": "aa-raam",
+  "Jahan": "Ja-haan",
+  "wahan": "va-haan"
+ },
+ "kokoroPhonemes": {
+  "Pyau": "pjˈɑu",
+  "Paani": "pˈɑni",
+  "chhaon": "ʧˈɑɔn",
+  "aaraam": "ɑɹˈɑm",
+  "Jahan": "ʤəhˈɑn",
+  "kaam": "kˈɑm",
+  "hai": "hˈɛ",
+  "wahan": "vəhˈɑn",
+  "kirana": "kɪɹˈɑnə",
+  "RWA": "ˌɑɹ dˌʌbəljˌu ˈA"
+ },
+ "leadSeconds": {
+  "S01": 1.0,
+  "S02": 0.3,
+  "S03": 0.4,
+  "S04": 0.3,
+  "S05": 0.5,
+  "S06": 0.4,
+  "S07": 0.4,
+  "S08": 0.5,
+  "S09": 0.4,
+  "S10": 1.0
+ },
+ "pauseSeconds": {
+  "S03": 9.0,
+  "S05": 1.0,
+  "S06": 1.2
+ },
+ "appAudioWindows": {
+  "S03": {
+   "note": "Set start/end (seconds from scene start) to the S03 beat after `npm run voice`; FootageSlot plays the clip's own audio only inside this window.",
+   "startSeconds": null,
+   "endSeconds": null
+  }
+ },
+ "scenes": {
+  "S01": "Two in the afternoon, Delhi. It feels like forty-five degrees. India had nearly eight million gig workers, and in one survey, over half reported heat exhaustion. The help is out there: a shop, a temple, a water ATM. Riders just can't see it.",
+  "S02": "India always had an answer: the Pyau. Free water, for anyone passing.",
+  "S03": "This is Pyau. A rider just asks, in Hindi. || Pyau answers with the nearest point that's open and confirmed today, and a scooter route.",
+  "S04": "Hosts join in under a minute: a kirana store, a chemist, an RWA office. And every morning, one tap confirms they're still serving water.",
+  "S05": "But the real problem is tomorrow. || The evening before, the coordinator sees the heat window, one to four p.m., and only {beforePercent} percent of rider requests with water nearby. || One click, and the Pyau agent gets to work. It reads the forecast, rider demand and coverage, and finds the gap: {clusterBRequests} requests, and nothing open. It picks the nearest hosts who could help, and writes to each of them in Hindi. || Where nobody can help, it says so, and suggests what a person should do. The coordinator reviews the plan, and approves.",
+  "S06": "Now AWS Step Functions takes over. It asks the kirana store first. || No answer in time, so it moves on. || The RWA office says yes. The point goes live on every rider's map, and coverage jumps from {beforePercent} to {afterPercent} percent.",
+  "S07": "And when riders report a point is dry or closed, it pauses itself, before it fails anyone else.",
+  "S08": "Under the hood, it's all AWS. The app runs on Amplify, with Amazon Location maps and scooter routes. API Gateway and Lambda handle every request. A Strands agent on Amazon Bedrock plans the outreach. Step Functions waits for people, with timeouts. DynamoDB keeps every host and run, Polly and Transcribe speak Hindi, and EventBridge Scheduler runs it every evening.",
+  "S09": "And here it is, for real: the same run in the Step Functions console. The timeout, the next host, the yes.",
+  "S10": "Pyau. Paani, chhaon, aaraam. Jahan kaam hai, wahan."
+ },
+ "tokens": {
+  "beforePercent": "facts.coverageBefore.percent rounded to integer",
+  "afterPercent": "facts.coverageAfter.percent rounded to integer",
+  "clusterBRequests": "facts.clusterB.requests"
+ },
+ "mustMatchFacts": [
+  "S08 names only services in facts.awsServices (drop Transcribe/Scheduler if cut)",
+  "S05/S06 numbers come from tokens"
+ ]
+}

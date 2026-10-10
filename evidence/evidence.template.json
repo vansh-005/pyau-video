@@ -1,0 +1,15 @@
+{
+  "captures": [
+    {
+      "shotId": "S05",
+      "file": "footage/05-plan-approve.mp4",
+      "runId": "<run id>",
+      "sessionId": "<demo session id>",
+      "executionName": "<same as run id>",
+      "capturedAt": "<ISO timestamp>",
+      "sourceIn": 0,
+      "sourceOut": 0,
+      "limitations": ""
+    }
+  ]
+}

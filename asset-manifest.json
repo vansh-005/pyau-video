@@ -1,0 +1,131 @@
+{
+ "schemaVersion": 1,
+ "mode": "draft",
+ "finalRenderAllowed": false,
+ "composition": {
+  "id": "PyauDemo",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "durationInFrames": 5100
+ },
+ "facts": {
+  "status": "expected_fixture_only",
+  "verified": false,
+  "sessionMode": "demo",
+  "scenarioDate": "2026-05-21",
+  "heatWindow": [
+   "13:00",
+   "16:00"
+  ],
+  "requestsInWindow": 44,
+  "clusterB": {
+   "requests": 18
+  },
+  "coverageBefore": {
+   "covered": 22,
+   "total": 44,
+   "percent": 50.0
+  },
+  "coverageAfter": {
+   "covered": 40,
+   "total": 44,
+   "percent": 90.9
+  },
+  "unresolved": [
+   {
+    "clusterId": "D",
+    "requests": 4
+   }
+  ],
+  "askTimeoutSecondsDemo": 45,
+  "awsServices": [],
+  "appUrl": null,
+  "repoUrl": null
+ },
+ "clips": [
+  {
+   "shotId": "S03",
+   "path": "footage/03-rider-voice.mp4",
+   "status": "missing",
+   "verified": false,
+   "kind": "real_capture_required",
+   "runId": null,
+   "capturedAt": null,
+   "sourceInSeconds": null,
+   "sourceOutSeconds": null,
+   "appAudio": true
+  },
+  {
+   "shotId": "S04",
+   "path": "footage/04-host-join.mp4",
+   "status": "missing",
+   "verified": false,
+   "kind": "real_capture_required",
+   "runId": null,
+   "capturedAt": null,
+   "sourceInSeconds": null,
+   "sourceOutSeconds": null,
+   "appAudio": false
+  },
+  {
+   "shotId": "S05",
+   "path": "footage/05-plan-approve.mp4",
+   "status": "missing",
+   "verified": false,
+   "kind": "real_capture_required",
+   "runId": null,
+   "capturedAt": null,
+   "sourceInSeconds": null,
+   "sourceOutSeconds": null,
+   "appAudio": false
+  },
+  {
+   "shotId": "S06",
+   "path": "footage/06-outreach.mp4",
+   "status": "missing",
+   "verified": false,
+   "kind": "real_capture_required",
+   "runId": null,
+   "capturedAt": null,
+   "sourceInSeconds": null,
+   "sourceOutSeconds": null,
+   "appAudio": false
+  },
+  {
+   "shotId": "S07",
+   "path": "footage/07-trust.mp4",
+   "status": "missing",
+   "verified": false,
+   "kind": "real_capture_required",
+   "runId": null,
+   "capturedAt": null,
+   "sourceInSeconds": null,
+   "sourceOutSeconds": null,
+   "appAudio": false
+  },
+  {
+   "shotId": "S09",
+   "path": "footage/09-aws-proof.mp4",
+   "status": "missing",
+   "verified": false,
+   "kind": "real_capture_required",
+   "runId": null,
+   "capturedAt": null,
+   "sourceInSeconds": null,
+   "sourceOutSeconds": null,
+   "appAudio": false
+  }
+ ],
+ "narration": {
+  "status": "draft",
+  "kind": "tts",
+  "engine": "kokoro-82m",
+  "finalApproved": false
+ },
+ "music": {
+  "enabled": true,
+  "src": "audio/bed.mp3",
+  "duckDb": -12
+ }
+}

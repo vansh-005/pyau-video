@@ -1,0 +1,18 @@
+{
+  "source": "copy of the app's docs/evidence/facts.json from a verified deployed run — replace every value",
+  "verifiedFromRunId": "<run id>",
+  "sessionMode": "demo",
+  "scenarioDate": "2026-05-21",
+  "zone": "East Delhi sample zone",
+  "heatWindow": ["13:00", "16:00"],
+  "requestsInWindow": 0,
+  "clusterB": {"requests": 0},
+  "coverageBefore": {"covered": 0, "total": 0, "percent": 0},
+  "coverageAfter": {"covered": 0, "total": 0, "percent": 0},
+  "unresolved": [],
+  "askTimeoutSecondsDemo": 0,
+  "bedrockModelId": "<verified>",
+  "awsServices": [],
+  "openSource": [],
+  "appUrl": null
+}
